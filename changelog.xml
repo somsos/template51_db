@@ -1,0 +1,80 @@
+<databaseChangeLog 
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.2.xsd"
+  >
+
+<!-- Example
+    <changeSet id="v0XXX_" author="Mario">
+        <sqlFile path="migrations/v0XXX/v0XXX_0XXX_deploy_XXX.sql" />
+        <rollback>
+            <sqlFile path="migrations/v0XXX/v0X_0X_rollback_XXX.sql" />
+        </rollback>>
+-->
+
+<!--  +++++++++++++++++++++++++++++  v01  +++++++++++++++++++++++++++++  -->
+
+    <changeSet id="v01_01" author="Mario">
+        <sqlFile path="migrations/v01/v01_01_create_table_product_images.sql" />
+    </changeSet>
+
+    <changeSet id="v01_02" author="Mario">
+        <sqlFile path="migrations/v01/v01_02_create_table_products.sql" />
+    </changeSet>
+
+
+    <changeSet id="v01_03" author="Mario">
+        <sqlFile path="migrations/v01/v01_03_create_table_roles.sql" />
+    </changeSet>
+
+
+    <changeSet id="v01_04" author="Mario">
+        <sqlFile path="migrations/v01/v01_04_create_table_users.sql" />
+    </changeSet>
+
+
+    <changeSet id="v01_05" author="Mario">
+        <sqlFile path="migrations/v01/v01_05_create_table_users_picture.sql" />
+    </changeSet>
+
+
+    <changeSet id="v01_06" author="Mario">
+        <sqlFile path="migrations/v01/v01_06_create_table_users_roles.sql" />
+    </changeSet>
+
+
+    <changeSet id="v01_07" author="Mario">
+        <sqlFile path="migrations/v01/v01_07_create_foreign_key_an_product_has_many_images.sql" />
+    </changeSet>
+
+
+    <changeSet id="v01_08" author="Mario">
+        <sqlFile path="migrations/v01/v01_08_create_foreign_key_a_product_has_an_owner.sql" />
+    </changeSet>
+
+
+    <changeSet id="v01_09" author="Mario">
+        <sqlFile path="migrations/v01/v01_09_create_foreign_key_an_user_picture_has_an_owner.sql" />
+    </changeSet>
+
+
+    <changeSet id="v01_10" author="Mario">
+        <sqlFile path="migrations/v01/v01_10_create_foreign_key_users_roles_many_to_many.sql" />
+    </changeSet>
+
+
+    <changeSet id="v01_12" author="Mario">
+        <sqlFile path="migrations/v01/v01_12_insert_admin_users.sql" />
+    </changeSet>
+
+
+    <changeSet id="v01_13" author="Mario">
+        <sqlFile path="migrations/v01/v01_13_insert_test_users.sql" />
+    </changeSet>
+
+
+    <changeSet id="v01_14" author="Mario">
+        <sqlFile path="migrations/v01/v01_14_insert_test_products.sql" />
+    </changeSet>
+
+</databaseChangeLog>
