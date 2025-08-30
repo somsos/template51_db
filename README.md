@@ -1,6 +1,10 @@
 # README
 
-## Start database
+## ToDo
+
+Check why when I roll-backed from v02 to v01. liquibase removed the mark of the tag v01, but it kept the changes of v01, and think avoid the v00, that maybe is not necessary to worry about it.
+
+## Start development database
 
 ```shell
 # CAREFUL: duplicated in back/01_documentation/user-guides/02_how_to_start_it.md
@@ -16,6 +20,24 @@ docker run --name jab_db --rm \
 
 # Checking
 psql postgresql://jab_db_user:jab_db_pass@localhost:5001/jab_db_test
+```
+
+Command to include vars in command
+
+```shell
+docker run --name template51_liquibase_migration --rm \
+  -v ./:/var/liquibase \
+  -w /var/liquibase \
+  -e DB_NAME=${DB_NAME} \
+  -e DB_USER=${DB_USER} \
+  -e DB_PASSWORD=${DB_PASSWORD} \
+  -e DB_URL=${DB_URL} \
+  liquibase:4.33-alpine \
+  liquibase update \
+    --username=$DB_USER \
+    --password=$DB_PASSWORD \
+    --url=$DB_URL
+
 ```
 
 ## liquibase cheat sheet
