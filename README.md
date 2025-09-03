@@ -1,16 +1,12 @@
 # README
 
-## ToDo
-
-Check why when I roll-backed from v02 to v01. liquibase removed the mark of the tag v01, but it kept the changes of v01, and think avoid the v00, that maybe is not necessary to worry about it.
-
 ## Start development database
 
 ```shell
 # CAREFUL: duplicated in back/01_documentation/user-guides/02_how_to_start_it.md
 
 # docker volume create template51-postgres-data-dev
-docker run --name jab_db --rm \
+docker run --name dev_jab_db --rm \
   -v template51-postgres-data-dev:/var/lib/postgresql/data \
   -p 5001:5432 \
   -e POSTGRES_DB=jab_db_test \
@@ -59,6 +55,9 @@ liquibase history
 
 # Create project
 liquibase init project
+
+# Rollback to tag
+liquibase rollback vXX
 ```
 
 ## DANGER
