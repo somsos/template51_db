@@ -97,10 +97,16 @@
     </changeSet>
 
 
+<!--
+    IMPORTANT: avoid to tagging here because it can lead to confusion
+    because liquibase on rollback also rollback the tags,
+    so the tagging was moved to do it in the liquibase CLI in the Jenkins pipeline
+    to keep better consistency.
+
     <changeSet id="v01_Tag" author="Mario">
         <tagDatabase tag="v01"/>
     </changeSet>
-
+-->
     
     
     
@@ -108,7 +114,7 @@
     
     
     
-    <!--  +++++++++++++++++++++++++++++  v02  +++++++++++++++++++++++++++++  -->
+    <!--  +++++++++++++++++++++++++++++  v02  +++++++++++++++++++++++++++++ 
 
     <changeSet id="v02_01" author="Mario">
         <sqlFile path="migrations/v02/v02_01_create_table_tests_deploy.sql" />
@@ -116,10 +122,7 @@
             <sqlFile path="migrations/v02/v02_01_create_table_tests_rollback.sql" />
         </rollback>
     </changeSet>
+     -->
 
-
-    <changeSet id="v02_Tag" author="Mario">
-        <tagDatabase tag="v02"/>
-    </changeSet>
 
 </databaseChangeLog>
