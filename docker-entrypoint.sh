@@ -25,6 +25,7 @@ if [ "$1" = "deploy" ]; then
     sleep 5;
     liquibase update $CONNECTION_VARS --changelog-file=changelog.xml
 
+    echo "Tagging database with: $DB_VERSION";
     liquibase tag $DB_VERSION $CONNECTION_VARS
 
     exit 0;
@@ -36,7 +37,8 @@ if [ "$1" = "rollback" ]; then
     sleep 5;
 
     liquibase rollback $DB_PREVIOUS_VERSION $CONNECTION_VARS --changelog-file=changelog.xml
-        
+    
+    echo "Tagging database with: $DB_PREVIOUS_VERSION";
     liquibase tag $DB_PREVIOUS_VERSION $CONNECTION_VARS
 
     exit 0;

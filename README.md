@@ -1,5 +1,9 @@
 # README
 
+## Checklist to make commit/push
+
+- [ ] In `Dockerfile` update the variables `B_PREVIOUS_VERSION` and `DB_VERSION`
+
 ## Start development database
 
 ```shell
