@@ -4,6 +4,6 @@ WORKDIR /var/my_migrations
 
 COPY . /var/my_migrations
 
-ENV DB_PREVIOUS_VERSION=v01
+ENV DB_PREVIOUS_VERSION=v00
 
-ENV DB_VERSION=v02
+ENV DB_VERSION=v01
