@@ -10,3 +10,5 @@ on backend and frontend by using `git revert`
 - [ ] make the pipeline
 - [ ] to deploy
 - [ ] to rollback
+
+learning how is an pull request in gitea
