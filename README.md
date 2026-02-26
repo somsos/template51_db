@@ -10,16 +10,16 @@
 # CAREFUL: duplicated in back/01_documentation/user-guides/02_how_to_start_it.md
 
 # docker volume create template51-postgres-data-dev
-docker run --name dev_jab_db --rm \
-  -v template51-postgres-data-dev:/var/lib/postgresql/data \
+docker run --name t51db_server --rm \
+  -v t51db_local:/var/lib/postgresql/data \
   -p 5001:5432 \
-  -e POSTGRES_DB=jab_db_test \
-  -e POSTGRES_USER=jab_db_user \
-  -e POSTGRES_PASSWORD=jab_db_pass \
-  postgres:17.2-alpine3.21 -c log_statement=all
+  -e POSTGRES_DB=t51db_schema \
+  -e POSTGRES_USER=t51db_user \
+  -e POSTGRES_PASSWORD=t51db_pass \
+  postgres:17.6-alpine3.22 -c log_statement=all
 
 # Checking
-psql postgresql://jab_db_user:jab_db_pass@localhost:5001/jab_db_test
+psql postgresql://t51db_user:t51db_pass@localhost:5001/t51db_schema
 ```
 
 Command to include vars in command
